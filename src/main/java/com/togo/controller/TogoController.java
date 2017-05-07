@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/togo")
 public class TogoController {
-    
+
     /**
      * simple hello
      * @return
@@ -24,4 +24,10 @@ public class TogoController {
 	return helloMap;
     }
     
+    public Map<String,String> getEnv() {
+	Map<String,String> configMap = new HashMap<>();
+	configMap.put("jenkins", "http://118.89.183.194:8080/");
+	configMap.put("togo_project", "http://118.89.183.194:8080/togo/hello");
+	return configMap;
+    }
 }
