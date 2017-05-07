@@ -1,2 +1,2 @@
 # togo
-simple personal api project
+springboot项目，用于技术研究与实践
