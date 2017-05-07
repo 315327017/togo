@@ -24,10 +24,10 @@ public class TogoController {
 	return helloMap;
     }
     
+    @GetMapping("/env")
     public Map<String,String> getEnv() {
 	Map<String,String> configMap = new HashMap<>();
-	configMap.put("jenkins", "http://118.89.183.194:8080/");
-	configMap.put("togo_project", "http://118.89.183.194:8080/togo/hello");
+	configMap.put("togo_project", "http://www.luang.me/togo/hello");
 	return configMap;
     }
 }
