@@ -45,10 +45,14 @@ public class TogoController {
     @Autowired
     private RestTemplate restTemplate;
     
-    @GetMapping("/bilibili/user/{id}")
     @SuppressWarnings("all")
+    @GetMapping("/bilibili/user/{id}")
     public Map<String,Object> getBilibiliUser(@PathVariable String id) {
 	return restTemplate.getForObject("http://account.bilibili.com/api/member/getInfoByMid?mid={id}", Map.class, id);
     }
 
+    @GetMapping("/bilibili/test")
+    public String getTest() {
+	return "bilibili";
+    }
 }
