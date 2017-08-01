@@ -1,14 +1,11 @@
 package com.togo.controller;
 
-import com.google.common.collect.ImmutableMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-import java.net.InetAddress;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,27 +31,6 @@ public class TogoController {
 	Map<String,String> configMap = new HashMap<>();
 	configMap.put("togo_project", "http://www.luang.me/togo/hello");
 	return configMap;
-    }
-
-    private static final ImmutableMap<String,String> channelMap = new ImmutableMap.Builder<String,String>().put("UC九游","sdk.g.uc.cn")
-            .put("百度","querysdkapi.91.com")
-            .put("360","openapi.360.cn")
-            .build();
-
-    @GetMapping("/channels")
-    public Map getUosdkChannelInfo() {
-
-        channelMap.forEach((String channelName, String hostString) -> {
-            try {
-                boolean isReachable = InetAddress.getByName(hostString).isReachable(1000);
-                String info = String.format(channelName + "%s", "\t ping:" + isReachable);
-                LOGGER.info(info);
-            } catch (IOException e) {
-                LOGGER.error(e.getMessage(), e);
-            }
-        });
-
-        return null;
     }
 
 }

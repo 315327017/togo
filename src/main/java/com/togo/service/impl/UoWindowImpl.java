@@ -1,4 +1,4 @@
-package com.togo.controller.service.impl;
+package com.togo.service.impl;
 
 /**
  * Created by bilibili on 2017/7/31.
