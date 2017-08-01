@@ -44,6 +44,8 @@ public class TogoController {
     @GetMapping("/channels")
     public Map getUosdkChannelInfo() {
 
+        System.out.println(1);
+
         channelMap.forEach((String channelName, String hostString) -> {
             try {
                 boolean isReachable = InetAddress.getByName(hostString).isReachable(1000);
