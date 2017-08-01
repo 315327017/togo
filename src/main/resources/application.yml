@@ -13,4 +13,6 @@ spring:
 logging:
   level:
     root: info
+  path: /data/logs/togo/
+
     
