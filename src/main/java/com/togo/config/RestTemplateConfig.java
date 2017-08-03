@@ -1,4 +1,4 @@
-package com.config;
+package com.togo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,8 +11,8 @@ public class RestTemplateConfig {
     @Bean(name = "restTemplate")
     public RestTemplate restTemplate() {
         SimpleClientHttpRequestFactory f = new SimpleClientHttpRequestFactory();
-        f.setReadTimeout(1000);
-        f.setConnectTimeout(500);
+        f.setReadTimeout(1500);
+        f.setConnectTimeout(1500);
         return new RestTemplate(f);
     }
 
