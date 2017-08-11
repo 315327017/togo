@@ -27,7 +27,7 @@ public class QAController {
     private RestTemplate restTemplate;
 
     @RequestMapping("/qa")
-    public Map qa(HttpServletRequest request, @RequestBody String body) throws UnsupportedEncodingException {
+    public Map qa(HttpServletRequest request, @RequestBody(required = false) String body) throws UnsupportedEncodingException {
         if(request.getMethod().equals(HttpMethod.GET.toString())) {
 
             String url = "http://gamesdk-qa.biligame.com/qa?tohost=";
