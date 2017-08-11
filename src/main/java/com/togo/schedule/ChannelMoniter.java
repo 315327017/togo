@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.net.InetAddress;
 
-@Component
 public class ChannelMoniter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TogoController.class);
