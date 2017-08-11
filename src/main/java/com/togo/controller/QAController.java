@@ -46,7 +46,7 @@ public class QAController {
             String queryString = strs[1];
             url += host + "8080" + queryString;
             UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("http://gamesdk-qa.biligame.com/qa");
-            builder.queryParam("tohost", host + "8080" + queryString);
+            builder.queryParam("tohost", host + "8080" + queryString.replaceFirst("&","?"));
             return restTemplate.exchange(builder.build().encode().toUri(), HttpMethod.valueOf(request.getMethod()), null, Map.class).
                     getBody();
         }
